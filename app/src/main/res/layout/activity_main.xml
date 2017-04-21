@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.warmboy.arduinoconnectu.MainActivity">
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <Button
+            android:text="Connect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editText"
+            android:id="@+id/buttonStart"
+            android:onClick="onClickStart"/>
+
+        <Button
+            android:text="Stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/buttonSend"
+            android:layout_toEndOf="@+id/buttonSend"
+            android:id="@+id/buttonStop"
+            android:layout_below="@+id/editText"
+            android:onClick="onClickStop"/>
+
+        <Button
+            android:text="Clear Plot"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/buttonClear"
+            android:onClick="onClickClear" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:background="@android:drawable/editbox_background"
+                android:textAlignment="center"
+                android:hint="Time (s)"
+                android:inputType="numberDecimal"
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/sensorTime"
+                android:layout_weight="1" />
+
+            <EditText
+                android:background="@android:drawable/editbox_background"
+                android:textAlignment="center"
+                android:hint="Voltage (V)"
+                android:inputType="numberDecimal"
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:id="@+id/sensorView0"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.jjoe64.graphview.GraphView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/graph"/>
+        </FrameLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
